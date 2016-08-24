@@ -1,48 +1,45 @@
-<?php 
-echo "<h2>Operadores de Atribuição</h2>";
-echo "<br/>Atribui 10 a variavel valor<br/>";
-echo $valor = 10;
-
-echo "<br/>Soma 20  a  $valor <br/>";
-echo $valor += 20;
-
-//$valor = $valor +20;
-
-echo "<br/>Subtrai 5  a  $valor <br/>";
-echo $valor -= 5;
-
-echo "<br/>Multiplica por 4 a  $valor <br/>";
-echo $valor *= 4;
-
-echo "<br/>Divide por 10  a  $valor <br/>";
-echo $valor /= 10;
-
-echo "<br/>";
-
-echo "<h2>Incremento</h2>";
-echo $valor++ ."<br/>";
-echo $valor."<br/>";
-
-echo ++$valor."<br/>";
-echo $valor."<br/>";
-
-
-echo "<h2>Decremento</h2>";
-echo $valor-- ."<br/>";
-echo $valor."<br/>";
-
-echo --$valor."<br/>";
-echo $valor."<br/>";
-
-echo "<h2>Operadores Aritméticos</h2>";
+<?php
+echo "<h2>Operadores Relacionais</h2>";
 
 $v1 = 10;
-$v2 = 8;
+$v2 = 20;
 
-echo "Adição V1 + V2 = ". ($v1 + $v2)."<br/>";
-echo "Subtração V1 - V2 = ". ($v1 - $v2)."<br/>";
-echo "Multiplicação V1 * V2 = ". $v1 * $v2."<br/>";
-echo "Divisão V1 / V2 = ". $v1 / $v2."<br/>";
-echo "Modulo V1 % V2 = ". ($v1 % $v2)."<br/>";
+compara($v1, $v2);
+
+function compara($v1, $v2) {
+
+    if ($v1 == $v2) {
+
+        echo "V1 é IGUAL a V2<br/>";
+    }
+    if ($v1 === $v2) {
+
+        echo "V1 é IDENTICO em valor e tipo a V2<br/>";
+    }
+    if ($v1 != $v2) {
+
+        echo "V1 NÃO é igual a V2<br/>";
+    }
+    if ($v1 !== $v2) {
+
+        echo "V1 NÃO é IDENTICO a V2<br/>";
+    }
+    if ($v1 < $v2) {
+
+        echo "V1 é MENOR que V2<br/>";
+    }
+    if ($v1 > $v2) {
+
+        echo "V1 é MENOR que V2<br/>";
+    }
+    if ($v1 <= $v2) {
+
+        echo "V1 é MENOR ou IGUAL que V2<br/>";
+    }
+    if ($v1 <= $v2) {
+
+        echo "V1 é MAIOR ou IGUAL que V2<br/>";
+    }
+}
 
 ?>
