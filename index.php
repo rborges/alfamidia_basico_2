@@ -1,21 +1,52 @@
 <?php
 
-define(MIN, 1);
-define(MAX, getrandmax());
+$v1 = TRUE;
+$v2 = TRUE;
 
-$valor1 = rand(MIN, MAX);
-$valor2 = rand(MIN, MAX);
+$tabela;
 
-if (($valor1 % 2 == 0) && ($valor2 % 2 == 0)) {
 
-    echo "O valor1= $valor1 e valor2= $valor2 são PARES";
-} elseif (($valor1 % 2 == 1) || ($valor2 % 2 == 0)) {
+while (count($tabela) < 8) {
 
-    echo "valor1= $valor1 é IMPAR e valor2= $valor2 é PAR";
-} elseif (($valor1 % 2 == 0) || ($valor2 % 2 == 1)) {
+    if ($v1 AND $v2) {
 
-    echo "valor1= $valor1 é PAR e valor2= $valor2 é IMPAR";
-} else {
+        $tabela[] = ["V1 AND V2" => "$v1 AND $v2"];
 
-    echo "Os valores são IMPARES";
+        $v1 = mudaBool($v1);
+    } elseif ($v1 OR $v2) {
+
+        $tabela[] = ["V1 OR V2" => "$v1 OR $v2"];
+
+        $v2 = mudaBool($v2);
+    } elseif ($v1 XOR $v2) {
+
+        $tabela[] = ["V1 XOR V2" => "$v1 XOR $v2"];
+
+        $v1 = mudaBool($v1);
+    } elseif ($v1 && $v2) {
+
+        $tabela[] = ["V1 && V2" => "$v1 && $v2"];
+
+        $v2 = mudaBool($v2);
+    } elseif ($v1 || $v2) {
+
+        $tabela[] = ["V1 || V2" => "$v1 || $v2"];
+
+        $v1 = mudaBool($v1);
+        $v2 = mudaBool($v2);
+    }
 }
+
+function mudaBool($a) {
+
+    return !$a;
+}
+
+echo "<ul>";
+foreach ($tabela as $tab) {
+    foreach ($tab as $key => $value) {
+        echo "<li> {$key} => {$value}</li>";
+    }
+}
+
+echo "</ul>";
