@@ -1,33 +1,21 @@
 <?php
 
-class Televisor {
+define(MIN, 1);
+define(MAX, getrandmax());
 
-    public $marca;
-    public $tamanho;
-    public $voltagem;
+$valor1 = rand(MIN, MAX);
+$valor2 = rand(MIN, MAX);
 
-    function ligar() {
-        echo "A televisão $this->marca está ligada em $this->voltagem Volts."
-        . "<br/>Ela tem $this->tamanho\"<br/><br/><br/> ";
-    }
+if (($valor1 % 2 == 0) && ($valor2 % 2 == 0)) {
 
+    echo "O valor1= $valor1 e valor2= $valor2 são PARES";
+} elseif (($valor1 % 2 == 1) || ($valor2 % 2 == 0)) {
+
+    echo "valor1= $valor1 é IMPAR e valor2= $valor2 é PAR";
+} elseif (($valor1 % 2 == 0) || ($valor2 % 2 == 1)) {
+
+    echo "valor1= $valor1 é PAR e valor2= $valor2 é IMPAR";
+} else {
+
+    echo "Os valores são IMPARES";
 }
-
-$obj1 = new Televisor;
-$obj2 = new Televisor;
-$obj3 = new Televisor;
-
-$obj1->marca = "Samsung";
-$obj1->tamanho = "42";
-$obj1->ligar();
-
-$obj2->marca = "LG";
-$obj2->tamanho = "60";
-$obj2->voltagem = "127";
-$obj2->ligar();
-
-$obj3->marca = "Panasonic";
-$obj3->tamanho = "50";
-$obj3->voltagem = "127";
-$obj3->ligar();
-
