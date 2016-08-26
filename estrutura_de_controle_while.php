@@ -1,10 +1,7 @@
-<?php
-
 $v1 = TRUE;
 $v2 = TRUE;
 
 $tabela;
-
 
 
 while (count($tabela) < 8) {
@@ -44,11 +41,8 @@ function mudaBool($a) {
 }
 
 echo "<ul>";
-
 foreach ($tabela as $tab) {
-
     foreach ($tab as $key => $value) {
-
         echo "<li> {$key} => {$value}</li>";
     }
 }
